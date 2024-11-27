@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "AI-Powered Code Reviewer",
+    "version": "1.3",
+    "description": "AI-driven code reviewer with GitHub integration and LeetCode submission capture.",
+    "permissions": [
+      "clipboardRead",
+      "clipboardWrite",
+      "storage",
+      "activeTab",
+      "scripting",
+      "identity"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://leetcode.com/*"],
+        "js": ["leetcode.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "oauth2": {
+      "client_id": "YOUR_GITHUB_OAUTH_CLIENT_ID",
+      "scopes": ["repo"]
+    }
+  }
+  
