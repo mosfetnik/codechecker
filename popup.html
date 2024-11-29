@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Code Reviewer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <title>8Code</title>
 </head>
 <body>
-  <div class="popup">
-    <h1>AI Code Reviewer</h1>
-    <button id="connectGitHub">Connect GitHub</button>
+  <div id="container">
+    <h1>8Code</h1>
     <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
     <button id="analyzeBtn">Analyze Code</button>
-    <pre id="results"></pre>
+    <div id="results"></div>
+    <button id="pushToGitHubBtn">Push to GitHub</button>
   </div>
   <script src="popup.js"></script>
 </body>

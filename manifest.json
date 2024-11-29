@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "8Code",
+  "version": "1.3",
+  "description": "AI-driven code reviewer with GitHub integration and LeetCode submission capture.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "activeTab",
+    "scripting",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["leetcode.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "oauth2": {
+    "client_id": "YOUR_GITHUB_OAUTH_CLIENT_ID",
+    "scopes": ["repo"]
+  }
+}

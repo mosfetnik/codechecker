@@ -1,33 +1,13 @@
-# 🚀 AI-Powered Code Reviewer Chrome Extension  
+# 8Code
 
-![Extension Icon](https://user-images.githubusercontent.com/00000000/icon.png)
+8Code is a Chrome Extension for AI-powered code review, GitHub integration, and auto-push for LeetCode submissions.
 
-A feature-rich Chrome Extension for developers to:  
-- Get **AI-powered code reviews** using the **Gemini Nano** model.  
-- Push code submissions from LeetCode or other platforms directly to **GitHub**.  
-- Save time by automating repetitive tasks in your coding workflow.  
+## Features
+- AI-driven code review using Gemini Nano.
+- Push code snippets or LeetCode solutions to GitHub.
+- Easy-to-use popup interface.
 
----
-
-## 🎯 Features  
-✅ **AI Code Review**: Analyze code snippets for errors, optimizations, and suggestions.  
-✅ **GitHub Integration**: Automatically push LeetCode submissions to your GitHub repository.  
-✅ **Code Submission Auto-Detection**: Detects when code is submitted on platforms like LeetCode.  
-✅ **Manual Code Input**: Copy-paste any code snippet for instant feedback.  
-
----
-
-## 🛠️ File Structure  
-Here’s how the extension is organized:  
-```plaintext  
-ai-code-reviewer/
-├── manifest.json         # Chrome Extension configuration  
-├── background.js         # Handles AI code analysis and GitHub integration  
-├── content.js            # Detects LeetCode submissions  
-├── popup.html            # Extension interface  
-├── popup.js              # Handles user actions and AI communication  
-├── styles.css            # Popup styling  
-├── github.js             # GitHub API functions  
-├── leetcode.js           # LeetCode code submission logic  
-├── gemini-nano.js        # AI analysis using Gemini Nano  
-├── icon.png              # Extension icon  
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/8Code.git

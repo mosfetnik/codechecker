@@ -1,27 +1,18 @@
-document.getElementById("analyzeBtn").addEventListener("click", () => {
-    const code = document.getElementById("codeInput").value;
+document.getElementById("analyzeBtn").addEventListener("click", async () => {
+  const code = document.getElementById("codeInput").value;
+  if (!code) return alert("Please paste your code.");
   
-    chrome.runtime.sendMessage({ type: "analyzeCode", code }, (response) => {
-      const results = document.getElementById("results");
-      if (response.feedback.error) {
-        results.textContent = "Error: " + response.feedback.error;
-      } else {
-        results.textContent = "Feedback:\n" + JSON.stringify(response.feedback, null, 2);
-      }
-    });
-  });
+  const feedback = await analyzeCode(code);
+  document.getElementById("results").innerText = feedback || "No suggestions.";
+});
+
+document.getElementById("pushToGitHubBtn").addEventListener("click", async () => {
+  const code = document.getElementById("codeInput").value;
+  if (!code) return alert("No code to push.");
   
-  document.getElementById("connectGitHub").addEventListener("click", () => {
-    chrome.identity.launchWebAuthFlow(
-      {
-        url: `https://github.com/login/oauth/authorize?client_id=YOUR_GITHUB_OAUTH_CLIENT_ID&scope=repo`,
-        interactive: true
-      },
-      (redirectUrl) => {
-        const accessToken = new URL(redirectUrl).searchParams.get("access_token");
-        localStorage.setItem("githubAccessToken", accessToken);
-        alert("GitHub connected successfully!");
-      }
-    );
-  });
-  
+  const filename = prompt("Enter a filename for this code:", "solution.js");
+  if (filename) {
+    const result = await pushCodeToGitHub(filename, code);
+    alert(result ? "Code pushed successfully!" : "Failed to push code.");
+  }
+});

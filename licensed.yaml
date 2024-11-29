@@ -1,0 +1,9 @@
+
+---
+
+### **Testing**
+- Load the extension in `chrome://extensions/`.
+- Paste a sample code in the popup and test the **Analyze Code** button.
+- Solve a problem on LeetCode and verify GitHub auto-push.
+
+This is now a complete and ready-to-deploy Chrome extension! 🎉
